@@ -1,15 +1,15 @@
 var mongoose = require('mongoose')
 
-var PromptStorage = new mongoose.schema({
+var PromptStorage = new mongoose.Schema({
   question: String
 });
 
-var UserSchema = new mongoose.schema({
+var UserSchema = new mongoose.Schema({
   username: String,
   submission: String,
   votes: Number,
   timestamp: Date
 });
 
-module.exports = mongoose.model('prompts', PromptStorage);
-module.exports = mongoose.model('user', UserSchema);
+module.exports.prompts = mongoose.model('prompts', PromptStorage);
+module.exports.user = mongoose.model('user', UserSchema);
