@@ -1,0 +1,26 @@
+{
+  "name": "pocket-bonanza",
+  "version": "0.0.1",
+  "description": "MVP project for Hack Reactor",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jgliner/2016-01-mvp.git"
+  },
+  "author": "Jarrett Gliner",
+  "license": "CC",
+  "bugs": {
+    "url": "https://github.com/jgliner/2016-01-mvp/issues"
+  },
+  "homepage": "https://github.com/jgliner/2016-01-mvp#readme",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "method-override": "^2.3.5",
+    "mongoose": "^4.4.3",
+    "socket.io": "^1.4.5"
+  }
+}
