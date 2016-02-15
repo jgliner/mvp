@@ -1,6 +1,6 @@
+var questionizer = require('../questionizerController')
 
 module.exports = function(app, express) {
-  app.get('/', function(req, res) {
-    res.sendFile(__dirname + '/index.html')
-  });
+  app.get('/api/questions/', questionizer.pickOne);
+  app.post('/api/questions/', questionizer.addNew);
 };
