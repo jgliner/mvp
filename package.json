@@ -17,10 +17,12 @@
   },
   "homepage": "https://github.com/jgliner/2016-01-mvp#readme",
   "dependencies": {
+    "bluebird": "^3.3.1",
     "body-parser": "^1.15.0",
     "express": "^4.13.4",
     "method-override": "^2.3.5",
     "mongoose": "^4.4.3",
+    "morgan": "^1.6.1",
     "socket.io": "^1.4.5"
   }
 }
