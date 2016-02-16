@@ -1,14 +1,19 @@
 angular.module('pocket-bonanza.startPage', [])
 
 .controller('startCtrl', ['$scope', 'userFactory', function($scope, userFactory) {
-  $scope.user = {name: ''};
+  $scope.user = '';
   $scope.submitName = function(user) {
     userFactory(user);
   }
 }])
 
-.factory('userFactory', [function(userObj) {
-  return function(userObj) {
-    console.log(userObj.name);
+.factory('userFactory', ['$http', function($http, user) {
+  return function(user) {
+    console.log(user)
+    $http({
+      method: 'POST',
+      url: '/api/users/',
+      data: {"username": user}
+    })
   }
 }])

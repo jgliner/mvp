@@ -3,7 +3,7 @@ var app = angular.module('pocket-bonanza', [
   'pocket-bonanza.startPage'
   ])
 
-app.config(function ($stateProvider, $urlRouterProvider) {
+app.config(function ($httpProvider, $stateProvider, $urlRouterProvider) {
   $stateProvider
 
   .state('/', { // Start screen
