@@ -19,7 +19,10 @@ module.exports = function(io) {
           if (countdown === 0) {
             console.log('GO!')
             io.emit('start round');
-            db.selectPrompt()
+            db.selectPrompt(function(prompt) {
+              console.log(prompt)
+              io.emit('send prompt', prompt);
+            })
             clearInterval(this);
           }
         }, 1000);

@@ -5,7 +5,7 @@ angular.module('pocket-bonanza.waitingPage', ['pocket-bonanza.socket'])
   socket.socketOn('user joined', function(count) {
     $scope.userCount = count;
   });
-  socket.socketOn('start round', function(count) {
+  socket.socketOn('start round', function() {
     $state.go('/main');
   });
 }])

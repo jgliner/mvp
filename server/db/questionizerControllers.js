@@ -2,7 +2,6 @@ var db = require('./questionizerModels.js');
 var Prompts = db.prompts;
 var User = db.user;
 var Promise = require('bluebird');
-var rando = require('mongoose-simple-random')
 
 module.exports = {
 
@@ -13,11 +12,11 @@ module.exports = {
     });
   },
 
-  selectPrompt: function() {
-    return Prompts.findOneRandom(function(err, res) {
+  selectPrompt: function(cb) {
+    return Prompts.findOneRandom(function(err, prompt) {
       if (err) {console.error(err);}
       else {
-        console.log(res);
+        cb(prompt.question);
       }
     })
   },
