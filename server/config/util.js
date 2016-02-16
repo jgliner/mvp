@@ -14,11 +14,15 @@ module.exports = function(io) {
           console.log(countdown)
           if (countdown === 0) {
             console.log('GO!')
-            io.emit('start game', userCount);
+            io.emit('start round');
             clearInterval(this);
           }
         }, 1000);
       }
+    });
+    client.on('disconnect', function (client) {
+        userCount--;
+        console.log('User left, count is now: ', userCount)
     });
   });
 
