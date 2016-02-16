@@ -37,7 +37,6 @@ module.exports = function(io) {
       db.storeAnswer(answer);
       if (ansCount === userCount) {
         db.fetchAll(function(allAnswers) {
-          console.log('nice!')
           io.emit('all in', allAnswers)
         });
       }
