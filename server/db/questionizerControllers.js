@@ -12,7 +12,7 @@ module.exports = {
     console.log('addNewUser', newUser)
     return Promise.promisifyAll(User.create(newUser)
     .then(function(user) {
-      console.log(user)
+      console.log(user);
     })
   )},
 
