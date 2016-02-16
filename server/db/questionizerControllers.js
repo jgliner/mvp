@@ -1,8 +1,8 @@
 var db = require('./questionizerModels.js');
 var Prompts = db.prompts;
 var User = db.user;
-var Prompts = db.prompts;
 var Promise = require('bluebird');
+var rando = require('mongoose-simple-random')
 
 module.exports = {
 
@@ -11,6 +11,15 @@ module.exports = {
     data.forEach(function(question) {
       Promise.promisifyAll(Prompts.create({'question': question}))
     });
+  },
+
+  selectPrompt: function() {
+    return Prompts.findOneRandom(function(err, res) {
+      if (err) {console.error(err);}
+      else {
+        console.log(res);
+      }
+    })
   },
 
   addNewUser: function(req, res, next) {
