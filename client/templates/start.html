@@ -1,7 +1,11 @@
 <div id="start" ng-controller="startCtrl" class="ngview">
-  <form name="username" ng-submit='submitName(user)' novalidate>
-    <input type="text" ng-model="user" placeholder="Name" />
+  <form name="username" ng-submit='submitName(user)' class="enterUsername" novalidate>
+    <div class="greeting">Hey There!</div>
+    <div class="greeting2">Please Enter Your Username!</div>
+    <br>
+    <input type="text" ng-model="user" placeholder="Name" class="center-block" />
     <div>{{user}}</div>
-    <button>Let's Go!</button>
+    <br>
+    <button class="center-block">Let's Go!</button>
   </form>
 </div>

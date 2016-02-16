@@ -1,3 +1,5 @@
-<div id="waiting" ng-controller="waitingCtrl" ng-init="connect()" class="ngview">
-  users: {{userCount}}
+<div id="waiting" ng-controller="waitingCtrl" ng-init="connect()" class="ngview waitingView">
+  <div class="waitingHeader">Waiting for {{2-userCount}} Other {{players}}<span class="ellipses"></span></div>
+  <div class="userCount">{{userCount}}</div>
+  <div class="userCountLabel">{{userCountLabel}}</div>
 </div>
