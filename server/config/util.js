@@ -2,6 +2,7 @@ var db = require('../db/questionizerControllers.js');
 var Promise = require('bluebird');
 
 var userCount = 0;
+var ansCount = 0;
 
 module.exports = function(io) {
   // Socket events and emitters
@@ -13,10 +14,11 @@ module.exports = function(io) {
       io.emit('user joined', userCount);
       if (userCount === 2) { // manually change for more/fewer players
         io.emit('start round');
-        var countdown = 2;
+        var countdown = 4;
         setInterval(function() {
           countdown--;
           console.log(countdown)
+          io.emit('send prompt', countdown);
           if (countdown === 0) {
             console.log('GO!')
             db.selectPrompt(function(prompt) {
@@ -28,6 +30,11 @@ module.exports = function(io) {
         }, 1000);
       }
     });
+
+    client.on('answer in', function(answer) {
+      ansCount+=1
+      db.storeAnswer(answer);
+    })
 
     client.on('disconnect', function (client) {
         userCount--;

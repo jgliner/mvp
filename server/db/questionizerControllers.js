@@ -21,6 +21,16 @@ module.exports = {
     })
   },
 
+  storeAnswer: function(ansObj) {
+    console.log(ansObj.answer)
+    User.findOneAndUpdate({username: ansObj.username}, { $set: { submission: ansObj.answer } }, 'upsert', function(err, res) {
+      if (err) {console.error(err)}
+      else {
+        console.log(ansObj.username, 'submitted', ansObj.answer, res);
+      }
+    });
+  },
+
   addNewUser: function(req, res, next) {
     var newUser = {
       username: req.body.username
