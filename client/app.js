@@ -1,7 +1,8 @@
 var app = angular.module('pocket-bonanza', [
   'ui.router',
   'pocket-bonanza.startPage',
-  'pocket-bonanza.waitingPage'
+  'pocket-bonanza.waitingPage',
+  'pocket-bonanza.mainPage'
   ])
 
 app.config(function ($httpProvider, $stateProvider, $urlRouterProvider) {
@@ -16,6 +17,11 @@ app.config(function ($httpProvider, $stateProvider, $urlRouterProvider) {
       url: '/',
       templateUrl: './templates/waiting.html',
       controller: 'waitingCtrl'
+  })
+  .state('/main', { // Main screen
+      url: '/',
+      templateUrl: './templates/main.html',
+      controller: 'mainCtrl'
   });
 
   $urlRouterProvider.otherwise('/');
