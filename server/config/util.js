@@ -1,9 +1,13 @@
 var userCount = 0;
 
-module.exports = function(socket) {
-  socket.on('client connected', function() {
-    userCount+=1;
-    socket.broadcast.emit('user joined', userCount);
-    console.log('TO CLIENT: ', userCount);
-  })
+module.exports = function(io) {
+  io.on('connection', function(client) {
+    userCount+=1
+    console.log('Client conencted. Users in room: ', userCount);
+    client.once('client connected', function() {
+      io.emit('user joined', userCount);
+    });
+  });
+
+
 }
