@@ -1,0 +1,19 @@
+{
+  "name": "pocket-bonanza",
+  "description": "MVP project for Hack Reactor",
+  "main": "server.js",
+  "authors": [
+    "Jarrett Gliner"
+  ],
+  "license": "CC",
+  "homepage": "https://github.com/jgliner/2016-01-mvp",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "./client/lib/",
+    "test",
+    "tests"
+  ]
+}

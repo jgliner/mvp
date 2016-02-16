@@ -36,3 +36,6 @@ bower_components/
 
 # Personal Dev Stuff
 _NEEDED.md
+
+# Bower is grumpy and will not ignore things
+/client/lib
