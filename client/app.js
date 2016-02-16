@@ -33,3 +33,7 @@ app.config(function ($httpProvider, $stateProvider, $urlRouterProvider) {
 
   $urlRouterProvider.otherwise('/');
 })
+
+.controller('persistentCtrl', ['$scope', '$rootScope', function($scope, $rootScope) {
+  $scope.username = $rootScope.username
+}])

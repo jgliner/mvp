@@ -2,7 +2,6 @@
   "prompts": [
     "Weirdest music video",
     "Most mind-blowing GIF",
-    "Worst \"It's a prank, bro!\" video",
     "Most tantalizing Food Porn GIF",
     "Craziest comment on Donald Trump's Facebook page",
     "Most badass music video",
