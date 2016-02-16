@@ -1,6 +1,8 @@
-var morgan = require('morgan')
+var morgan = require('morgan');
+var bodyParser = require('body-parser');
 
 module.exports = function(app, express) {
-  app.use(express.static(__dirname + '/../../client'));
   app.use(morgan('dev'));
+  app.use(bodyParser.json());
+  app.use(express.static(__dirname + '/../../client'));
 }
