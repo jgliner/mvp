@@ -1,10 +1,10 @@
-angular.module('pocket-bonanza.startPage', [])
+angular.module('pocket-bonanza.startPage', ['pocket-bonanza.socket'])
 
-.controller('startCtrl', ['$scope', '$state', 'userFactory', function($scope, $state, userFactory) {
+.controller('startCtrl', ['$scope', '$state', 'socket', 'userFactory', function($scope, $state, socket, userFactory) {
   $scope.user = '';
   $scope.submitName = function(user) {
-    userFactory(user)
-    $state.go('/waiting')
+    userFactory(user);
+    $state.go('/waiting');
   }
 }])
 

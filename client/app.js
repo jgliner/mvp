@@ -2,7 +2,8 @@ var app = angular.module('pocket-bonanza', [
   'ui.router',
   'pocket-bonanza.startPage',
   'pocket-bonanza.waitingPage',
-  'pocket-bonanza.mainPage'
+  'pocket-bonanza.mainPage',
+  'pocket-bonanza.socket',
   ])
 
 app.config(function ($httpProvider, $stateProvider, $urlRouterProvider) {
