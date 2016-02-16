@@ -12,13 +12,13 @@ module.exports = function(io) {
     client.once('client connected', function() {
       io.emit('user joined', userCount);
       if (userCount === 2) { // manually change for more/fewer players
-          var countdown = 2;
+        io.emit('start round');
+        var countdown = 2;
         setInterval(function() {
           countdown--;
           console.log(countdown)
           if (countdown === 0) {
             console.log('GO!')
-            io.emit('start round');
             db.selectPrompt(function(prompt) {
               console.log(prompt)
               io.emit('send prompt', prompt);
