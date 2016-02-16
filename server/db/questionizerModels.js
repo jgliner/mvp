@@ -7,7 +7,7 @@ var PromptStorage = new mongoose.Schema({
 var UserSchema = new mongoose.Schema({
   username: String,
   submission: String,
-  votes: Number,
+  votes: {type: Number, default: 0},
   timestamp: Date
 });
 
