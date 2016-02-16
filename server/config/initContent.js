@@ -1,7 +1,6 @@
 var Promise = require('bluebird');
 var fs = require('fs');
 var mongoose = require('mongoose');
-var db = require('../db/questionizerControllers.js');
 var path = require('path');
 
 module.exports = function(cb) {
