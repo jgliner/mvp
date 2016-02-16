@@ -1,3 +1,9 @@
 <div id="main" ng-controller="mainCtrl">
-{{prompt}}
+  {{prompt}}
+  <br>
+  <br>
+  <form name="submission" ng-submit='submitAnswer(sub)' novalidate>
+    <input type="text" ng-model="sub" placeholder="Put your response here!" />
+    <button>Submit Answer</button>
+  </form>
 </div>
