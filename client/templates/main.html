@@ -2,7 +2,7 @@
   <h3>{{username}}</h3>
   {{prompt}}
   <br>
-  <br>
+  <hr>
   <form name="submission" ng-submit='submitAnswer(sub)' ng-hide="answerIn" novalidate>
     <input type="text" ng-model="sub" placeholder="Put your response here!" />
     <button>Submit Answer</button>
@@ -10,5 +10,8 @@
   <div ng-show="answerIn">
     <h4>Your Answer:</h4>
     <div>{{answer}}</div>
+    <br>
+    <i>Waiting for other players...</i>
   </div>
+  <div ng-show="allIn">Done!</div>
 </div>
