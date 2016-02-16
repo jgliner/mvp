@@ -1,4 +1,4 @@
-/*Shared*/
+/*--------Shared--------*/
 
 body {
   overflow: hidden;
@@ -6,7 +6,14 @@ body {
   background-color: #B0DEE5 !important;
 }
 
-/*Persistent*/
+@keyframes fade {
+  0% {opacity:0}
+  33.333% { opacity: 0}
+  66.666% { opacity: 0}
+  100% { opacity: 1}
+}
+
+/*--------Persistent--------*/
 
 .topbar {
   position: absolute;
@@ -16,33 +23,71 @@ body {
   top: 0;
   left: 0;
   box-shadow: 0px 2px 15px 0px #a3a3a3;
+  animation: fade 1s;
+  -webkit-animation: fade 1s;
 }
 .topbar>h1 {
+  font-family: 'Bangers', sans-serif;
+  font-size: 50px;
   text-align: center;
   color: #ffffff;
   font-weight: lighter;
+  letter-spacing: 3px;
 }
 
 .bottombar {
   position: absolute;
   box-shadow: 0px 2px 15px 0px #a3a3a3;
   background-color: #33758D;
-  padding: 5px 0px;
+  padding: 17px 0px;
   width: 100vw;
   left: 0;
   top: 93.5vh;
+  animation: fade 1s;
+  -webkit-animation: fade 1s;
 }
 .bottombar>h4 {
+  font-family: 'Bangers', sans-serif;
   text-align: center;
   color: #ffffff;
+  font-weight: lighter;
+  letter-spacing: 2px;
 }
-
-/*View-Dependent*/
 
 .ngview {
   position: relative;
   top: 125px;
 }
+
+/*--------View-Dependent--------*/
+
+/*Start*/
+.enterUsername {
+  position: relative;
+  top: 20vh;
+}
+
+.greeting, .greeting2 {
+  text-align: center;
+  font-size: 25px;
+  animation: fade 2s;
+  -webkit-animation: fade 2s;
+}
+.greeting2 {
+  animation: fade 2.5s;
+  -webkit-animation: fade 2.5s;
+}
+.enterUsername input {
+  animation: fade 3s;
+  -webkit-animation: fade 3s;
+}
+.enterUsername button {
+  animation: fade 3.2s;
+  -webkit-animation: fade 3.2s;
+}
+
+
+
 
 
 
