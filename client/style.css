@@ -13,6 +13,16 @@ body {
   100% { opacity: 1}
 }
 
+@keyframes slideFromTop {
+  0% {top: -15vh}
+  100% { top: 0}
+}
+
+@keyframes slideFromBottom {
+  0% {top: 100vh}
+  100% { top: 93.5vh}
+}
+
 @keyframes ellipsis {
   to {
     width: 1.25em;    
@@ -34,8 +44,8 @@ body {
   top: 0;
   left: 0;
   box-shadow: 0px 2px 15px 0px #a3a3a3;
-  /*animation: fade 1s;*/
-  /*-webkit-animation: fade 1s;*/
+  animation: slideFromTop 1s;
+  -webkit-animation: slideFromTop 1s;
 }
 .topbar>h1 {
   font-family: 'Bangers', sans-serif;
@@ -54,8 +64,8 @@ body {
   width: 100vw;
   left: 0;
   top: 93.5vh;
-  /*animation: fade 1s;*/
-  /*-webkit-animation: fade 1s;*/
+  animation: slideFromBottom 1s;
+  -webkit-animation: slideFromBottom 1s;
 }
 .bottombar>h4 {
   font-family: 'Bangers', sans-serif;
@@ -130,3 +140,4 @@ body {
   font-size: 50px;
 }
 
+/*Waiting*/
