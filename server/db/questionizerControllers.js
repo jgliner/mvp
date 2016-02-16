@@ -44,6 +44,16 @@ module.exports = {
 
   pickOne: function(req, res, next) {
     console.log('insidepickone')
+  },
+
+  fetchAll: function(cb) {
+    var userObj = {};
+    User.find({}, function(err, data) {
+      if (err) {console.error(err);}
+      else {
+        cb(data);
+      }
+    })
   }
 
 }

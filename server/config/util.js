@@ -31,9 +31,16 @@ module.exports = function(io) {
       }
     });
 
-    client.on('answer in', function(answer) {
+    client.once('answer in', function(answer) {
       ansCount+=1
+      console.log('answer count is now', ansCount,'/',userCount, 'users');
       db.storeAnswer(answer);
+      if (ansCount === userCount) {
+        db.fetchAll(function(allAnswers) {
+          console.log('nice!')
+          io.emit('all in', allAnswers)
+        });
+      }
     })
 
     client.on('disconnect', function (client) {
