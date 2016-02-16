@@ -1,3 +1,7 @@
 <div id="start" ng-controller="startCtrl">
-  <input type="text" ng-model="searchString" placeholder="Name" />
+  <form name="username" ng-submit='submitName(user)' novalidate>
+    <input type="text" ng-model="user.name" placeholder="Name" />
+    <div>{{user}}</div>
+    <button>Let's Go!</button>
+  </form>
 </div>
