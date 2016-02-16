@@ -1,16 +1,16 @@
 var db = require('./questionizerModels.js');
 var Prompts = db.prompts;
-var User = db.prompts;
+var User = db.user;
 var Promise = require('bluebird');
 
 module.exports = {
 
   addNewUser: function(req, res, next) {
-    console.log('addNewUser', req.body)
     var newUser = {
       username: req.body.username
     }
-    return Promise.promisify(User.UserSchema(newUser)
+    console.log('addNewUser', newUser)
+    return Promise.promisifyAll(User.create(newUser)
     .then(function(user) {
       console.log(user)
     })
