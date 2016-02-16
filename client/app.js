@@ -3,7 +3,8 @@ var app = angular.module('pocket-bonanza', [
   'pocket-bonanza.startPage',
   'pocket-bonanza.waitingPage',
   'pocket-bonanza.mainPage',
-  'pocket-bonanza.socket',
+  'pocket-bonanza.resultsPage',
+  'pocket-bonanza.socket'
   ])
 
 app.config(function ($httpProvider, $stateProvider, $urlRouterProvider) {
@@ -23,6 +24,11 @@ app.config(function ($httpProvider, $stateProvider, $urlRouterProvider) {
       url: '/',
       templateUrl: './templates/main.html',
       controller: 'mainCtrl'
+  })
+  .state('/results', { // Results screen
+      url: '/',
+      templateUrl: './templates/results.html',
+      controller: 'resultsCtrl'
   });
 
   $urlRouterProvider.otherwise('/');
