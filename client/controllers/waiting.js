@@ -1,7 +1,9 @@
 angular.module('pocket-bonanza.waitingPage', ['pocket-bonanza.socket'])
 
-.controller('waitingCtrl', ['$scope', '$state', 'socket', function($scope, $state, socket) {
+.controller('waitingCtrl', ['$scope', '$rootScope', '$state', 'socket', function($scope, $rootScope, $state, socket) {
   $scope.connect = socket.socketEmit('client connected');
+
+  $rootScope.heading = $rootScope.username;
 
   socket.socketOn('user joined', function(count) {
     $scope.userCount = count;

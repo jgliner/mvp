@@ -5,13 +5,14 @@ angular.module('pocket-bonanza.resultsPage', ['pocket-bonanza.socket'])
     return sub.username !== $rootScope.username;
   }
 }])
+
 .directive('answer', function() {
   return {
     template:
     `
-    <div ng-repeat="ans in ansObj | filter:notOwnUsername">
+    <div ng-repeat="ans in ansObj | filter:notOwnUsername" class="col-xs-4 answer">
       <h2>{{ans.username}}</h2>
-      <h3>{{ans.submission}}</h3>
+      <a href={{ans.submission}}><h3 class="sub">X</h3></a>
     </div>
 
     `

@@ -35,5 +35,5 @@ app.config(function ($httpProvider, $stateProvider, $urlRouterProvider) {
 })
 
 .controller('persistentCtrl', ['$scope', '$rootScope', function($scope, $rootScope) {
-  $scope.heading = $rootScope.username || 'Pocket Bonanza'
+  $rootScope.heading = 'Pocket Bonanza'
 }])

@@ -34,6 +34,10 @@ body {
   }
 }
 
+hr {
+  border-color: black !important;
+}
+
 /*--------Persistent--------*/
 
 .topbar {
@@ -141,4 +145,51 @@ body {
   font-size: 50px;
 }
 
-/*Waiting*/
+/*Main Game*/
+.mainView {
+  top: 30vh;
+}
+.mainView>h3:first-child {
+  text-align: center;
+}
+.mainView>h3:nth-child(2) {
+  font-family: 'Bangers', sans-serif;
+  text-align: center;
+  font-size: 50px;
+}
+
+.mainView input {
+  text-align: center;
+  width: 100%;
+}
+
+.answerIn {
+  text-align: center;
+  font-size: 30px;
+}
+.answerIn>i:after {
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: bottom;
+  -webkit-animation: ellipsis steps(4,end) 2s infinite;      
+  animation: ellipsis steps(4,end) 2s infinite;
+  content: "\2026";
+  width: 0px;
+  font-size: 25px;
+}
+
+/*Result*/
+answer {
+  text-align: center;
+}
+
+.resultsView h3:first-child {
+  font-family: 'Bangers', sans-serif;
+  text-align: center;
+  font-size: 50px;
+}
+.sub {
+  font-family: 'Bangers', sans-serif;
+  text-align: center;
+  font-size: 30px;
+}

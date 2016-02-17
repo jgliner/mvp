@@ -1,17 +1,19 @@
-<div id="main" ng-controller="mainCtrl" class="ngview">
-  <h3>{{username}}</h3>
-  {{prompt}}
+<div id="main" ng-controller="mainCtrl" class="ngview mainView container">
+  <h3>{{promptOrCountdown}}</h3>
+  <h3>{{prompt}}</h3>
   <br>
   <hr>
-  <form name="submission" ng-submit='submitAnswer(sub)' ng-hide="answerIn" novalidate>
-    <input type="text" ng-model="sub" placeholder="Put your response here!" />
-    <button>Submit Answer</button>
+  <br>
+  <form name="submission" ng-submit='submitAnswer(sub)' ng-hide="answerIn" novalidate />
+    <input type="text" ng-model="sub" placeholder="Put your response here!" class="center-block" />
+    <br>
+    <button class="center-block">Submit Answer</button>
   </form>
-  <div ng-show="answerIn">
-    <h4>Your Answer:</h4>
+  <div ng-show="answerIn" class="answerIn">
+    <h3>Your Answer:</h3>
     <div>{{answer}}</div>
     <br>
-    <i>Waiting for other players...</i>
+    <i>Waiting for other players</i>
   </div>
   <div ng-show="allIn">Done!</div>
 </div>

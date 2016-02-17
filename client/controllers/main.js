@@ -10,8 +10,15 @@ angular.module('pocket-bonanza.mainPage', ['pocket-bonanza.socket'])
     socket.socketEmit('answer in', answer, $rootScope.username);
   }
 
+  $scope.promptOrCountdown = 'Get Ready!';
+  $scope.prompt = 3;
+
   socket.socketOn('send prompt', function(prompt) {
     $scope.prompt = prompt;
+    if (prompt.length > 1) {
+      $scope.promptOrCountdown = 'The Category is...';
+      $rootScope.prompt = prompt
+    }
   });
 
   socket.socketOn('all in', function(ansObj) {

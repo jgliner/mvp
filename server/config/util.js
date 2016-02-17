@@ -14,7 +14,7 @@ module.exports = function(io) {
       io.emit('user joined', userCount);
       if (userCount === 2) { // manually change for more/fewer players
         io.emit('start round');
-        var countdown = 4;
+        var countdown = 3;
         setInterval(function() {
           countdown--;
           console.log(countdown)
@@ -35,7 +35,7 @@ module.exports = function(io) {
       ansCount+=1
       console.log('answer count is now', ansCount,'/',userCount, 'users');
       db.storeAnswer(answer);
-      if (ansCount === userCount) {
+      if (ansCount >= userCount) {
         db.fetchAll(function(allAnswers) {
           io.emit('all in', allAnswers)
         });
