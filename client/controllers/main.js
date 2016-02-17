@@ -7,7 +7,15 @@ angular.module('pocket-bonanza.mainPage', ['pocket-bonanza.socket'])
   $scope.submitAnswer = function(answer) {
     $scope.answerIn = true;
     $scope.answer = answer;
-    socket.socketEmit('answer in', answer, $rootScope.username);
+    if (answer.match(/(youtube)/igm)) {
+      var vidId = answer.slice(answer.indexOf('?v=')+3)
+      window.searchYoutube(answer, function(data) {
+        console.log(data)
+      })
+    }
+    else {
+      socket.socketEmit('answer in', answer, $rootScope.username);
+    }
   }
 
   $scope.promptOrCountdown = 'Get Ready!';

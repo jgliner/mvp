@@ -182,6 +182,9 @@ hr {
 answer {
   text-align: center;
 }
+.answer:hover {
+  background-color: #95CBD3;
+}
 
 .resultsView h3:first-child {
   font-family: 'Bangers', sans-serif;
