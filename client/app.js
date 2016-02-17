@@ -5,7 +5,7 @@ var app = angular.module('pocket-bonanza', [
   'pocket-bonanza.mainPage',
   'pocket-bonanza.resultsPage',
   'pocket-bonanza.socket'
-  ])
+]);
 
 app.config(function ($httpProvider, $stateProvider, $urlRouterProvider) {
   $stateProvider
@@ -35,5 +35,5 @@ app.config(function ($httpProvider, $stateProvider, $urlRouterProvider) {
 })
 
 .controller('persistentCtrl', ['$scope', '$rootScope', function($scope, $rootScope) {
-  $scope.username = $rootScope.username
+  $scope.heading = $rootScope.username || 'Pocket Bonanza'
 }])
